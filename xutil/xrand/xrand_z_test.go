@@ -1,4 +1,4 @@
-package grand_test
+package xrand_test
 
 import (
 	"testing"

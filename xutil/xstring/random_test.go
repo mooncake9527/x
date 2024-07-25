@@ -1,4 +1,4 @@
-package gstring
+package xstring
 
 import (
 	"testing"

@@ -1,4 +1,4 @@
-package gstring
+package xstring
 
 type node struct {
 	children map[rune]*node

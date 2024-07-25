@@ -115,7 +115,7 @@ func formatStackLines(buffer *bytes.Buffer, lines *list.List) string {
 			space = " "
 		}
 		buffer.WriteString(fmt.Sprintf(
-			"   %d).%s%s\n        %s\n",
+			"   %d. %s%s\n        %s\n",
 			i+1, space, line.Function, line.FileLine,
 		))
 	}
@@ -131,8 +131,8 @@ func loopLinesOfStackInfo(st stack, info *stackInfo) {
 		if fn := runtime.FuncForPC(p - 1); fn != nil {
 			file, line := fn.FileLine(p - 1)
 			if IsUsingBriefStack {
-				// 过滤整个 G 包堆栈路径。
-				if strings.Contains(file, stackFilterKeyForG) {
+				// 过滤整个 X 包堆栈路径。
+				if strings.Contains(file, stackFilterKeyForX) {
 					continue
 				}
 			} else {
