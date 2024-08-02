@@ -1,6 +1,7 @@
 package xutil_test
 
 import (
+	"github.com/mooncake9527/x/xutil"
 	"testing"
 
 	"github.com/stretchr/testify/assert"

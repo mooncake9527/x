@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"bytes"
 	"crypto/tls"
+	"github.com/mooncake9527/x/xerrors/xerror"
 	"io"
 	"net"
 	"time"

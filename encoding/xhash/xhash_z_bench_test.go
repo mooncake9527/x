@@ -3,6 +3,7 @@
 package xhash_test
 
 import (
+	"github.com/mooncake9527/x/encoding/xhash"
 	"testing"
 )
 

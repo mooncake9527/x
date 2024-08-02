@@ -2,6 +2,7 @@ package xtcp
 
 import (
 	"crypto/tls"
+	"github.com/mooncake9527/x/xerrors/xerror"
 	"net"
 	"time"
 )

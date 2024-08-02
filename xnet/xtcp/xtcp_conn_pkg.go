@@ -2,6 +2,8 @@ package xtcp
 
 import (
 	"encoding/binary"
+	"github.com/mooncake9527/x/xerrors/xcode"
+	"github.com/mooncake9527/x/xerrors/xerror"
 	"time"
 )
 

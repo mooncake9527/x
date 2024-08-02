@@ -1,6 +1,7 @@
 package xtcp_test
 
 import (
+	"github.com/mooncake9527/x/xnet/xtcp"
 	"testing"
 
 	"github.com/stretchr/testify/assert"

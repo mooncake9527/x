@@ -1,6 +1,8 @@
 package xrand_test
 
 import (
+	"github.com/mooncake9527/x/xutil"
+	"github.com/mooncake9527/x/xutil/xrand"
 	"testing"
 
 	"github.com/stretchr/testify/assert"

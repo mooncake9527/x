@@ -1,6 +1,7 @@
 package xudp_test
 
 import (
+	"github.com/mooncake9527/x/xnet/xudp"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
