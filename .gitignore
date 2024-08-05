@@ -21,3 +21,5 @@
 go.work
 go.work.sum
 .idea
+.DS_store
+.DS_store/
