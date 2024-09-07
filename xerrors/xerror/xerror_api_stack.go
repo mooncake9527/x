@@ -10,6 +10,7 @@ type stack []uintptr
 const (
 	// maxStackDepth 标记最大堆栈深度的错误后轨迹。
 	maxStackDepth = 64
+	// maxStackDepth = 10
 )
 
 // Cause 获取根错误 error。
