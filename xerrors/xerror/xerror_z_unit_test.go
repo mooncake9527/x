@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"github.com/mooncake9527/x/xerrors/xcode"
 	"github.com/mooncake9527/x/xerrors/xerror"
+	"gorm.io/gorm"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -253,7 +254,13 @@ func Test_Is(t *testing.T) {
 	err2 := xerror.Wrap(err1, "2")
 	err2 = xerror.Wrap(err2, "3")
 	assert.Equal(t, xerror.Is(err2, err1), true)
-
+	err3 := xerror.Wrap(gorm.ErrRecordNotFound, "3")
+	assert.Equal(t, xerror.Is(err3, gorm.ErrRecordNotFound), true)
+	err4 := xerror.New(gorm.ErrRecordNotFound.Error())
+	assert.Equal(t, xerror.Is(err4, gorm.ErrRecordNotFound), true)
+	err5 := xerror.WrapCode(xcode.New(1, "record not found", ""), gorm.ErrRecordNotFound, "exes")
+	assert.Equal(t, xerror.Is(err5, gorm.ErrRecordNotFound), true)
+	t.Log((err5).(xerror.ICode).Code().Code())
 }
 
 func Test_HashError(t *testing.T) {
@@ -261,7 +268,6 @@ func Test_HashError(t *testing.T) {
 	err2 := xerror.Wrap(err1, "2")
 	err2 = xerror.Wrap(err2, "3")
 	assert.Equal(t, xerror.HasError(err2, err1), true)
-
 }
 
 func Test_HashCode(t *testing.T) {

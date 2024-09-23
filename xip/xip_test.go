@@ -12,7 +12,6 @@ func TestGetServerIp(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := GetServerIp()
-			t.Log("got", got)
 			if got != tt.want {
 				t.Errorf("GetServerIp() = %v, want %v", got, tt.want)
 			}

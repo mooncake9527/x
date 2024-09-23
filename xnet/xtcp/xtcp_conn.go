@@ -239,7 +239,7 @@ func (c *Conn) SendWithTimeout(data []byte, timeout time.Duration, retry ...Retr
 	return
 }
 
-// SendReceive 将数据写入连接并阻止读取响应。
+// SendReceive 将数据写入连接并读取响应。
 func (c *Conn) SendReceive(data []byte, length int, retry ...Retry) ([]byte, error) {
 	if err := c.Send(data, retry...); err == nil {
 		return c.Receive(length, retry...)
