@@ -87,6 +87,9 @@ func Equal(err, target error) bool {
 
 // Is 包含判断。
 func Is(err, target error) bool {
+	if err.Error() == target.Error() {
+		return true
+	}
 	if e, ok := err.(IIs); ok {
 		return e.Is(target)
 	}
