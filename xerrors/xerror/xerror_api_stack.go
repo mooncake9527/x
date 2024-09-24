@@ -72,7 +72,6 @@ func HasStack(err error) bool {
 	return ok
 }
 
-// Equal 错误对象比较。
 func Equal(err, target error) bool {
 	if err == target {
 		return true
@@ -86,7 +85,6 @@ func Equal(err, target error) bool {
 	return false
 }
 
-// Is 包含判断。
 func Is(err, target error) bool {
 	if err.Error() == target.Error() {
 		return true
