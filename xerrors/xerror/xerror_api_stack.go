@@ -96,12 +96,10 @@ func Is(err, target error) bool {
 	return false
 }
 
-// HasError 包含判断，`xerror.Is` 的别名。
 func HasError(err, target error) bool {
 	return Is(err, target)
 }
 
-// callers 获取堆栈信息。
 func callers(skip ...int) stack {
 	var (
 		pcs [maxStackDepth]uintptr
