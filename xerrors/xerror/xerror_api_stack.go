@@ -1,6 +1,7 @@
 package xerror
 
 import (
+	"errors"
 	"runtime"
 )
 
@@ -88,6 +89,9 @@ func Equal(err, target error) bool {
 // Is 包含判断。
 func Is(err, target error) bool {
 	if err.Error() == target.Error() {
+		return true
+	}
+	if errors.Is(err, target) {
 		return true
 	}
 	if e, ok := err.(IIs); ok {
