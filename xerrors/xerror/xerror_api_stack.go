@@ -76,13 +76,16 @@ func Equal(err, target error) bool {
 	if err == target {
 		return true
 	}
+	if err.Error() == target.Error() {
+		return true
+	}
 	if e, ok := err.(IEqual); ok {
 		return e.Equal(target)
 	}
 	if e, ok := target.(IEqual); ok {
 		return e.Equal(err)
 	}
-	return false
+	return Is(err, target)
 }
 
 func Is(err, target error) bool {
